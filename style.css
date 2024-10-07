@@ -1,0 +1,100 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-image:url(wood-591631_640.jpg);
+    background-size: cover;
+    background-position:center;
+    height:10vh;
+ 
+
+   
+}
+.container
+{
+    background-color: aliceblue;
+    padding:20px;
+    margin:0 auto;
+    width:90%;
+    max-width:600px;
+    border-radius:10px;
+    border:2px solid rgb(229, 243, 245);
+    box-shadow: 0px 0px 5px 5px;
+    text-align: center;
+    margin-top:50px;
+    
+}
+.recipeimage
+{
+    width:50%;
+    margin: 10px auto;
+    display: block;
+    border-radius:10px;
+}
+.recipeimage:hover{
+    box-shadow:0px 0px 2px 2px;
+    transition: 0.9em;
+    border-radius:10px;
+}
+h1{
+  text-align: center;
+  color:rgb(16, 16, 16);
+  margin-bottom:5px;
+
+}
+h1:hover{
+    color:brown;
+}
+h3{
+      font-family: "Sixtyfour Convergence";
+      font-optical-sizing: auto;
+      font-weight:bold;
+      font-style: normal;
+      font-variation-settings:
+        "BLED" 0,
+        "SCAN" 0,
+        "XELA" 0,
+        "YELA" 0;
+        text-align: center;
+        color:brown;
+
+    }
+    h2{
+          color:black;
+          font-weight: 700;
+          font-family: "Edu AU VIC WA NT Dots", cursive;
+          font-optical-sizing: auto;
+          font-style: normal;
+        }
+    button{
+        width:50%;
+        margin:5px;
+        padding:5px;
+        color:black;
+        font-weight:bold;
+        border-radius:10px;
+        border:none;
+        background-color: rgb(252, 217, 175);
+    }
+    .recipecontent
+    {
+        font-weight: bold;
+        border-radius:15px;
+        border:1px solid rgb(185, 134, 57);
+    }
+    .highlight {
+        background-color: rgb(80, 192, 126);
+        font-weight: bold;
+    }
+    ul {
+        
+        text-align:left;
+        padding: 0;
+        margin:20px;
+    }
+    ul li:hover{
+        color:coral;
+    }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe card</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="recipecard">
+            <h3>Chocolate Cake</h3>
+            <img src="chocolate cake.jpg!w700wp" class="recipeimage" alt="Chocolate Cake">
+        </div>
+        <br>
+        <div class="recipecontent">
+            <div>
+                <h2>Preparation time: 30 minutes</h2>
+                <h2>Serving size: 8 servings</h2>
+            </div>
+            <br>
+            <div>
+                <h3>Ingredients</h3>
+            </div>
+            <ul class="ingredients">
+                <li>1 and 3/4 cups all-purpose flour</li>
+                <li>3/4 cup unsweetened cocoa powder</li>
+                <li>1 and 1/2 teaspoons baking powder</li>
+                <li>1 and 1/2 teaspoons baking soda</li>
+                <li>1 teaspoon salt</li>
+                <li>2 cups granulated sugar</li>
+                <li>2 large eggs</li>
+                <li>1 cup whole milk</li>
+                <li>1/2 cup vegetable oil</li>
+                <li>2 teaspoons vanilla extract</li>
+                <li>1 cup boiling water</li>
+                </div>
+           
+            <button id="show-ingredients-btn">Show Ingredients</button>
+            <button id="start-cooking-btn">Start Cooking</button>
+            <button id="next-step-btn" style="display: none;">Next</button>
+        </div>
+    </ul>
+    <br> 
+    </div>
+
+    <script>
+        document.getElementById("show-ingredients-btn").addEventListener("click", function() {
+            const ingredientsList = document.querySelector(".ingredients");
+            if (ingredientsList.style.display === "none") {
+                ingredientsList.style.display = "block";
+                this.textContent = "Hide Ingredients";
+            } else {
+                ingredientsList.style.display = "none";
+                this.textContent = "Show Ingredients";
+            }
+        });
+        let currentStep = 0; 
+        const ingredients = document.querySelectorAll(".ingredients li");
+
+        document.getElementById("start-cooking-btn").addEventListener("click", function() {
+            this.style.display = "none";
+            document.getElementById("next-step-btn").style.display = "inline";
+            highlightStep(currentStep);
+        });
+
+        document.getElementById("next-step-btn").addEventListener("click", function() {
+            ingredients[currentStep].classList.remove("highlight");
+            currentStep++;
+            if (currentStep < ingredients.length) {
+                highlightStep(currentStep);
+            } else {
+                this.style.display = "none";
+                alert("All steps are done! Happy baking!");
+            }
+        });
+        function highlightStep(step) {
+            ingredients[step].classList.add("highlight");
+        }
+        document.querySelector(".ingredients").style.display = "none";
+        document.querySelector(".frosting").style.display = "none";
+    </script>
+</body>
+</html>
